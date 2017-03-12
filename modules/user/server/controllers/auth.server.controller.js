@@ -11,14 +11,13 @@ function post(req, res, next) {
     const data = {
         name: {
             first: req.body.first,
-            mi: req.body.mi,
             last: req.body.last
         },
         address: req.body.address || null,
         photo: req.body.photo || null,
         sex: req.body.sex || null,
         group: req.body.group || [],
-        birthday: req.body.birthday || null,
+        birthday: req.body.birthday || new Date(),
         email: req.body.email,
         password: req.body.password,
         mobileNumber: req.body.mobileNumber || null,

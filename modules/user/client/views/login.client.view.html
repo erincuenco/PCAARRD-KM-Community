@@ -30,23 +30,23 @@
                 <div class="form-group row">
                     <div class="col-xs-5">
                         <label for="first">Name</label>
-                        <input ng-model="reg.firstName" class="form-control login-content__form-control" id="first" placeholder="First Name">
+                        <input ng-model="signup.firstName" class="form-control login-content__form-control" id="first" placeholder="First Name">
                     </div>
                     <div class="col-xs-7" style="padding-left: 0px;">
                         <label for="last">&nbsp</label>
-                        <input ng-model="reg.lastName" class="form-control login-content__form-control" id="last" placeholder="Last Name">
+                        <input ng-model="signup.lastName" class="form-control login-content__form-control" id="last" placeholder="Last Name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="community-email ">Email address</label>
-                    <input ng-model="reg.email" type="email" class="form-control login-content__form-control" id="community-email" placeholder="Email">
+                    <input ng-model="signup.email" type="email" class="form-control login-content__form-control" id="community-email" placeholder="Email">
                 </div>
                 <div class="form-group">
                     <label for="community-pass">Password</label>
-                    <input ng-model="reg.password" type="password" class="form-control login-content__form-control" id="community-pass" placeholder="Password">
+                    <input ng-model="signup.password" type="password" class="form-control login-content__form-control" id="community-pass" placeholder="Password">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success col-xs-3" style="height: 40px" ng-submit="register()">Submit</button>
+                    <button class="btn btn-success col-xs-3" style="height: 40px" ng-click="signup()">Submit</button>
                     <p class="col-xs-7">Already have an account? <a href="#" ng-click="toggleForm()">Sign in</a></p>
                 </div>
             </form>

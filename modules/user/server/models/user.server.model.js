@@ -7,11 +7,6 @@ const nameSchema = mongoose.Schema({
         lowercase: true,
         required: true
     },
-    mi: {
-        type: String,
-        lowercase: true,
-        required: true
-    },
     last: {
         type: String,
         lowercase: true,
