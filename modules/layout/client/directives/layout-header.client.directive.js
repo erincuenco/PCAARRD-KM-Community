@@ -1,6 +1,6 @@
 (() => {
 	'use strict';
-	
+
 	angular
 		.module('layout')
 		.directive('layoutHeader', layoutHeader);
@@ -10,11 +10,11 @@
 
 		const directive = {
 			restrict: 'E',
-			templateUrl: '/layout/client/views/layout-header.client.view.html'
+			templateUrl: '/layout/client/views/layout-header.client.view.html',
+			controller: 'HeaderController'
 		}
 
 		return directive;
 	}
 
 })();
-

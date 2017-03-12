@@ -8,9 +8,11 @@ import jQuery from 'jquery';
 		.module('home')
 		.controller('LoggedInHomeController', LoggedInHomeController);
 
-	LoggedInHomeController.$inject = ['$scope', 'LoggedInHomeService'];
+	LoggedInHomeController.$inject = ['$scope', '$http', 'LoggedInHomeService'];
 
-	function LoggedInHomeController ($scope, LoggedInHomeService) {
+	function LoggedInHomeController ($scope, $http, LoggedInHomeService) {
+        LoggedInHomeService.auth();
+
         $scope.onLogin = result => {
             jQuery('.modal').modal('hide');
         }

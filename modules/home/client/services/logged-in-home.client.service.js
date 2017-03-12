@@ -2,20 +2,19 @@ import _ from 'lodash';
 
 (() => {
 	'use strict';
-	
+
 	angular
 		.module('home')
-		.factory('LoggedInHomeService', LoggedInHomeService);
+		.service('LoggedInHomeService', LoggedInHomeService);
 
-	LoggedInHomeService.$inject = ['$http'];
+	LoggedInHomeService.$inject = ['$http', '$state', '$location'];
 
-	function LoggedInHomeService ($http) {
-
-
-		return {
-			
-		};
+	function LoggedInHomeService ($http, $state, $location) {
+        this.auth = function() {
+            if(localStorage.getItem('email') == null) {
+                $state.go('entry');
+            }
+        }
 	}
 
 })();
-

@@ -5,9 +5,9 @@
 		.module('user')
 		.controller('LoginController', LoginController);
 
-	LoginController.$inject = ['$scope', '$state', '$http'];
+	LoginController.$inject = ['$scope', '$state', '$http', 'LoginService'];
 
-	function LoginController ($scope, $state, $http) {
+	function LoginController ($scope, $state, $http, LoginService) {
         $scope.email = '';
         $scope.password = '';
         $scope.form = 'default';
@@ -29,13 +29,12 @@
             }).then(success, error);
 
             function success(response) {
-                console.log('Successfully logged in');
+                LoginService.setSession();
                 $state.go('home');
             }
 
             function error(response) {
                 // TODO: Catch error
-                console.log(response);
             }
         }
 
@@ -54,13 +53,11 @@
             }).then(success, error);
 
             function success(response) {
-                console.log('Successfully registered');
                 $state.go('home');
             }
 
             function error(response) {
                 // TODO: Catch error
-                console.log(response);
             }
         }
 	}
